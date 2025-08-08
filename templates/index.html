@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Translate (YouTube)</title>
+  <title>YouTube → Live Translation</title>
   <link rel="stylesheet" href="/static/style.css"/>
 </head>
 <body>
@@ -43,14 +43,19 @@
     <p id="status" class="muted"></p>
   </section>
 
-  <main>
+  <main class="layout">
     <div class="player-wrap">
       <div id="player"></div>
       <div id="subsOverlay" class="subs-overlay"></div>
     </div>
+    <aside class="side">
+      <h3>Live transcript</h3>
+      <div id="liveText" class="live-text"></div>
+    </aside>
   </main>
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="/static/app.js"></script>
 </body>
 </html>
+
