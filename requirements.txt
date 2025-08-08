@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+yt-dlp
+faster-whisper
+jinja2
+requests

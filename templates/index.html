@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Translate (YouTube)</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🎥 YouTube → Live Translation</h1>
+    <p class="muted">Paste any YouTube livestream or video. CPU-only, one stream at a time for the demo.</p>
+  </header>
+
+  <section class="controls">
+    <input id="ytUrl" placeholder="https://www.youtube.com/watch?v=..." />
+    <div class="row">
+      <label>Source language</label>
+      <select id="srcLang">
+        <option value="">Auto-detect</option>
+        <option value="es">Spanish</option>
+        <option value="en">English</option>
+        <option value="pt">Portuguese</option>
+        <option value="fr">French</option>
+      </select>
+
+      <label>Task</label>
+      <select id="task">
+        <option value="translate" selected>Translate → English</option>
+        <option value="transcribe">Transcribe (source language)</option>
+      </select>
+
+      <button id="startBtn">Start</button>
+      <button id="stopBtn">Stop</button>
+    </div>
+
+    <div class="row">
+      <label>Sync offset (seconds)</label>
+      <input type="range" id="offset" min="-10" max="10" value="0" step="0.25"/>
+      <span id="offsetVal">0</span>
+    </div>
+
+    <p id="status" class="muted"></p>
+  </section>
+
+  <main>
+    <div class="player-wrap">
+      <div id="player"></div>
+      <div id="subsOverlay" class="subs-overlay"></div>
+    </div>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
